@@ -1,0 +1,11 @@
+void loadalldata()
+            {
+                SqlCommand myCmd = new SqlCommand("SP_Patient_View", con);
+                SqlDataAdapter da = new SqlDataAdapter(myCmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                dataGridView1.DataSource = dt;
+            }
+
+            loadalldata();
